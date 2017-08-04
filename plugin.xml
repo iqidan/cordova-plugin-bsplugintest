@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="cordova-plugin-bsplugintest"
+      version="1.0.0">
+    <engines>
+        <engine name="cordova" version=">=3.3.0" />
+    </engines>
+    <name>BSPluginTest</name>
+    <description>BSPluginTest first ios plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,bsplugintest</keywords>
+    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-bsplugintest.git</repo>
+
+    <js-module src="www/bsPluginTest.js" name="bsPluginTest">
+      <clobbers target="cordova.bsPluginTest.getScreenMessage"/>
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+      <source-file src="src/ios/BSPluginTest.m"/>
+      <header-file src="src/ios/BSPluginTest.h"/>
+      <config-file target="config.xml" parent="/*">
+        <feature name="bsPluginTest">
+          <param name="ios-package" value="BSPluginTest"></param>
+        </feature>
+      </config-file>
+    </platform>
+</plugin>
